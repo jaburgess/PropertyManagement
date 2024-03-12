@@ -1,0 +1,2 @@
+[19-Oct-2022 18:51:33 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.32. in /home/webpythons/public_html/demo/shg/vendor/composer/platform_check.php on line 24
+[13-Dec-2022 16:16:27 UTC] PHP Fatal error:  Unparenthesized `a ? b : c ? d : e` is not supported. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in /home/webpythons/public_html/demo/shg/app/Http/Controllers/pageController.php on line 171

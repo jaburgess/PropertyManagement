@@ -1,0 +1,236 @@
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: normal;
+src: local('../fonts/LacaRegular'), url('../fonts/LacaRegular.woff') format('woff');
+}
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: normal;
+src: local('../fonts/LacaRegularItalic'), url('../fonts/LacaRegularItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: 100;
+src: local('../fonts/LacaExtraLight'), url('../fonts/LacaExtraLight.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: 100;
+src: local('../fonts/LacaExtraLightItalic'), url('../fonts/LacaExtraLightItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: 300;
+src: local('../fonts/LacaLight'), url('../fonts/LacaLight.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: 300;
+src: local('../fonts/LacaLightItalic'), url('../fonts/LacaLightItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: 500;
+src: local('../fonts/LacaBook'), url('../fonts/LacaBook.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: 500;
+src: local('../fonts/LacaBookItalic'), url('../fonts/LacaBookItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: 600;
+src: local('../fonts/LacaMedium'), url('../fonts/LacaMedium.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: 600;
+src: local('../fonts/LacaMediumItalic'), url('../fonts/LacaMediumItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: 700;
+src: local('../fonts/LacaSemiBold'), url('../fonts/LacaSemibold.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: 700;
+src: local('../fonts/LacaSemiBoldItalic'), url('../fonts/LacaSemiboldItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: 800;
+src: local('../fonts/LacaBold'), url('../fonts/LacaBold.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: 800;
+src: local('../fonts/LacaBoldItalic'), url('../fonts/LacaBoldItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: normal;
+font-weight: 900;
+src: local('../fonts/LacaBlack'), url('../fonts/LacaBlack.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Laca';
+font-style: italic;
+font-weight: 900;
+src: local('../fonts/LacaBlackItalic'), url('../fonts/LacaBlackItalic.woff') format('woff');
+}
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 400;
+src: local('../fonts/HeroNewRegular'), url('../fonts/HeroNewRegular.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 400;
+src: local('../fonts/HeroNewRegularItalic'), url('../fonts/HeroNewRegularItalic.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 300;
+src: local('../fonts/HeroNewThin'), url('../fonts/HeroNewThin.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 300;
+src: local('../fonts/HeroNewThinItalic'), url('../fonts/HeroNewThinItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 100;
+src: local('../fonts/HeroNewUltraLight'), url('../fonts/HeroNewUltraLight.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 100;
+src: local('../fonts/HeroNewUltraLightItalic'), url('../fonts/HeroNewUltraLightItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 200;
+src: local('../fonts/HeroNewLight'), url('../fonts/HeroNewLight.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 200;
+src: local('../fonts/HeroNewLightItalic'), url('../fonts/HeroNewLightItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 500;
+src: local('../fonts/HeroNewMedium'), url('../fonts/HeroNewMedium.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 500;
+src: local('../fonts/HeroNewMediumItalic'), url('../fonts/HeroNewMediumItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 600;
+src: local('../fonts/HeroNewSemiBold'), url('../fonts/HeroNewSemiBold.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 600;
+src: local('../fonts/HeroNewSemiBoldItalic'), url('../fonts/HeroNewSemiBoldItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 700;
+src: local('../fonts/HeroNewBold'), url('../fonts/HeroNewBold.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 700;
+src: local('../fonts/HeroNewBoldItalic'), url('../fonts/HeroNewBoldItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 800;
+src: local('../fonts/HeroNewExtraBold'), url('../fonts/HeroNewExtraBold.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 800;
+src: local('../fonts/HeroNewExtraBoldItalic'), url('../fonts/HeroNewExtraBoldItalic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: normal;
+font-weight: 900;
+src: local('../fonts/HeroNewSuper'), url('../fonts/HeroNewSuper.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Hero';
+font-style: italic;
+font-weight: 900;
+src: local('../fonts/HeroNewSuperItalic'), url('../fonts/HeroNewSuperItalic.woff') format('woff');
+}

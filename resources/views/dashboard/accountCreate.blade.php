@@ -1,0 +1,396 @@
+@extends('../dashboardLayouts.master')
+@section('body')
+
+<div class="propertyCreate dashboardProperties">
+    
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('adminDashboard') }}"><i class="metismenu-icon pe-7s-rocket"></i> Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ URL::to('/dashboard/account/users') }}">Account</a></li>
+        <li class="breadcrumb-item">Users</li>
+        <li class="breadcrumb-item active">User Create Account</li>
+    </ol>
+
+    <ul class="top_above_error" @if($message=='') style="display:none;" @endif>
+        <li>{{$message}}</li>
+    </ul>
+
+    <form method="POST" class="faq formvalidationappeared accountCreateForm" action="{{ route('dashboardAccountPost') }}" id="botble-real-estate-forms-property-form" enctype="multipart/form-data" >
+        @csrf
+        <input type="hidden" name="status" id="statusHidden" value="" />
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main-form">
+                    <div class="form-body">
+                        
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="firstname" class="control-label required" aria-required="true">First Name</label>
+                            <input class="form-control" placeholder="First Name" name="firstname" type="text" value="{{$firstname}}" id="firstname" required />
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="lastname" class="control-label required" aria-required="true">Last Name</label>
+                            <input class="form-control" placeholder="Last Name" name="lastname" type="text" value="{{$lastname}}" id="lastname" required />
+                        </div>
+                        
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="company" class="control-label" >Company Name</label>
+                            <input class="form-control" placeholder="Company Name" name="company" type="text" value="{{$company}}" id="company" />
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="phone" class="control-label required" aria-required="true">Phone</label>
+                            <input class="form-control" placeholder="Phone" name="phone" type="tel" id="phone" value="{{$phone}}" required />
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="dobYear" class="control-label" aria-required="true">Date of birth (Year)</label>
+                            <select name="dobYear">
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2015') selected @endif value="2015">2015</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2014') selected @endif value="2014">2014</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2013') selected @endif value="2013">2013</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2012') selected @endif value="2012">2012</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2011') selected @endif value="2011">2011</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2010') selected @endif value="2010">2010</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2009') selected @endif value="2009">2009</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2008') selected @endif value="2008">2008</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2007') selected @endif value="2007">2007</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2006') selected @endif value="2006">2006</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2005') selected @endif value="2005">2005</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2004') selected @endif value="2004">2004</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2003') selected @endif value="2003">2003</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2002') selected @endif value="2002">2002</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2001') selected @endif value="2001">2001</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='2000') selected @endif value="2000">2000</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1999') selected @endif value="1999">1999</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1998') selected @endif value="1998">1998</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1997') selected @endif value="1997">1997</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1996') selected @endif value="1996">1996</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1995') selected @endif value="1995">1995</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1994') selected @endif value="1994">1994</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1993') selected @endif value="1993">1993</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1992') selected @endif value="1992">1992</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1991') selected @endif value="1991">1991</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1990') selected @endif value="1990">1990</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1989') selected @endif value="1989">1989</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1988') selected @endif value="1988">1988</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1987') selected @endif value="1987">1987</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1986') selected @endif value="1986">1986</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1985') selected @endif value="1985">1985</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1984') selected @endif value="1984">1984</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1983') selected @endif value="1983">1983</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1982') selected @endif value="1982">1982</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1981') selected @endif value="1981">1981</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1980') selected @endif value="1980">1980</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1979') selected @endif value="1979">1979</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1978') selected @endif value="1978">1978</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1977') selected @endif value="1977">1977</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1976') selected @endif value="1976">1976</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1975') selected @endif value="1975">1975</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1974') selected @endif value="1974">1974</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1973') selected @endif value="1973">1973</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1972') selected @endif value="1972">1972</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1971') selected @endif value="1971">1971</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1970') selected @endif value="1970">1970</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1969') selected @endif value="1969">1969</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1968') selected @endif value="1968">1968</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1967') selected @endif value="1967">1967</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1966') selected @endif value="1966">1966</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1965') selected @endif value="1965">1965</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1964') selected @endif value="1964">1964</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1963') selected @endif value="1963">1963</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1962') selected @endif value="1962">1962</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1961') selected @endif value="1961">1961</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1960') selected @endif value="1960">1960</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1959') selected @endif value="1959">1959</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1958') selected @endif value="1958">1958</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1957') selected @endif value="1957">1957</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1956') selected @endif value="1956">1956</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1955') selected @endif value="1955">1955</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1954') selected @endif value="1954">1954</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1953') selected @endif value="1953">1953</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1952') selected @endif value="1952">1952</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1951') selected @endif value="1951">1951</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1950') selected @endif value="1950">1950</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1949') selected @endif value="1949">1949</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1948') selected @endif value="1948">1948</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1947') selected @endif value="1947">1947</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1946') selected @endif value="1946">1946</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1945') selected @endif value="1945">1945</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1944') selected @endif value="1944">1944</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1943') selected @endif value="1943">1943</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1942') selected @endif value="1942">1942</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1941') selected @endif value="1941">1941</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1940') selected @endif value="1940">1940</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1939') selected @endif value="1939">1939</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1938') selected @endif value="1938">1938</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1937') selected @endif value="1937">1937</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1936') selected @endif value="1936">1936</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1935') selected @endif value="1935">1935</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1934') selected @endif value="1934">1934</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1933') selected @endif value="1933">1933</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1932') selected @endif value="1932">1932</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1931') selected @endif value="1931">1931</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1930') selected @endif value="1930">1930</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1929') selected @endif value="1929">1929</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1928') selected @endif value="1928">1928</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1927') selected @endif value="1927">1927</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1926') selected @endif value="1926">1926</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1925') selected @endif value="1925">1925</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1924') selected @endif value="1924">1924</option>
+                                <option @if($dob!='' && explode('-', $dob)[0]=='1923') selected @endif value="1923">1923</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="dobMonth" class="control-label" aria-required="true">Date of birth (Month)</label>
+                            <select name="dobMonth">
+                                <option @if($dob!='' && explode('-', $dob)[1]=='1') selected @endif value="1">1</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='2') selected @endif value="2">2</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='3') selected @endif value="3">3</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='4') selected @endif value="4">4</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='5') selected @endif value="5">5</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='6') selected @endif value="6">6</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='7') selected @endif value="7">7</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='8') selected @endif value="8">8</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='9') selected @endif value="9">9</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='10') selected @endif value="10">10</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='11') selected @endif value="11">11</option>
+                                <option @if($dob!='' && explode('-', $dob)[1]=='12') selected @endif value="12">12</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="dobDate" class="control-label" aria-required="true">Date of birth (Date)</label>
+                            <select name="dobDate">
+                                <option @if($dob!='' && explode('-', $dob)[2]=='1') selected @endif value="1">1</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='2') selected @endif value="2">2</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='3') selected @endif value="3">3</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='4') selected @endif value="4">4</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='5') selected @endif value="5">5</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='6') selected @endif value="6">6</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='7') selected @endif value="7">7</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='8') selected @endif value="8">8</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='9') selected @endif value="9">9</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='10') selected @endif value="10">10</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='11') selected @endif value="11">11</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='12') selected @endif value="12">12</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='13') selected @endif value="13">13</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='14') selected @endif value="14">14</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='15') selected @endif value="15">15</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='16') selected @endif value="16">16</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='17') selected @endif value="17">17</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='18') selected @endif value="18">18</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='19') selected @endif value="19">19</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='20') selected @endif value="20">20</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='21') selected @endif value="21">21</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='22') selected @endif value="22">22</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='23') selected @endif value="23">23</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='24') selected @endif value="24">24</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='25') selected @endif value="25">25</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='26') selected @endif value="26">26</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='27') selected @endif value="27">27</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='28') selected @endif value="28">28</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='29') selected @endif value="29">29</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='30') selected @endif value="30">30</option>
+                                <option @if($dob!='' && explode('-', $dob)[2]=='31') selected @endif value="31">31</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div last">
+                            <label for="userid" class="control-label" aria-required="true">ID Type</label>
+                            <input class="form-control" placeholder="ID Type" name="userid" type="text" value="{{$userid}}" id="userid" />
+                        </div>
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="userid" class="control-label" aria-required="true">ID Number</label>
+                            <input class="form-control" placeholder="ID Number" name="useridnumber" type="number" value="{{$useridnumber}}" id="useridnumber" />
+                        </div>
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="useridyear" class="control-label" aria-required="true">ID Expiry Year</label>
+                            <select class="control-label" name="useridyear" id="useridyear">
+                                <option @if($useridyear=='2023') selected @endif value="2023">2023</option>
+                                <option @if($useridyear=='2024') selected @endif value="2024">2024</option>
+                                <option @if($useridyear=='2025') selected @endif value="2025">2025</option>
+                                <option @if($useridyear=='2026') selected @endif value="2026">2026</option>
+                                <option @if($useridyear=='2027') selected @endif value="2027">2027</option>
+                                <option @if($useridyear=='2028') selected @endif value="2028">2028</option>
+                                <option @if($useridyear=='2029') selected @endif value="2029">2029</option>
+                                <option @if($useridyear=='2030') selected @endif value="2030">2030</option>
+                                <option @if($useridyear=='2031') selected @endif value="2031">2031</option>
+                                <option @if($useridyear=='2032') selected @endif value="2032">2032</option>
+                                <option @if($useridyear=='2033') selected @endif value="2033">2033</option>
+                                <option @if($useridyear=='2034') selected @endif value="2034">2034</option>
+                                <option @if($useridyear=='2035') selected @endif value="2035">2035</option>
+                                <option @if($useridyear=='2036') selected @endif value="2036">2036</option>
+                                <option @if($useridyear=='2037') selected @endif value="2037">2037</option>
+                                <option @if($useridyear=='2038') selected @endif value="2038">2038</option>
+                                <option @if($useridyear=='2039') selected @endif value="2039">2039</option>
+                                <option @if($useridyear=='2040') selected @endif value="2040">2040</option>
+                                <option @if($useridyear=='2041') selected @endif value="2041">2041</option>
+                                <option @if($useridyear=='2042') selected @endif value="2042">2042</option>
+                                <option @if($useridyear=='2043') selected @endif value="2043">2043</option>
+                                <option @if($useridyear=='2044') selected @endif value="2044">2044</option>
+                                <option @if($useridyear=='2045') selected @endif value="2045">2045</option>
+                                <option @if($useridyear=='2046') selected @endif value="2046">2046</option>
+                                <option @if($useridyear=='2047') selected @endif value="2047">2047</option>
+                                <option @if($useridyear=='2048') selected @endif value="2048">2048</option>
+                                <option @if($useridyear=='2049') selected @endif value="2049">2049</option>
+                                <option @if($useridyear=='2050') selected @endif value="2050">2050</option>
+                                <option @if($useridyear=='2051') selected @endif value="2051">2051</option>
+                                <option @if($useridyear=='2052') selected @endif value="2052">2052</option>
+                                <option @if($useridyear=='2053') selected @endif value="2053">2053</option>
+                                <option @if($useridyear=='2054') selected @endif value="2054">2054</option>
+                                <option @if($useridyear=='2055') selected @endif value="2055">2055</option>
+                                <option @if($useridyear=='2056') selected @endif value="2056">2056</option>
+                                <option @if($useridyear=='2057') selected @endif value="2057">2057</option>
+                                <option @if($useridyear=='2058') selected @endif value="2058">2058</option>
+                                <option @if($useridyear=='2059') selected @endif value="2059">2059</option>
+                                <option @if($useridyear=='2060') selected @endif value="2060">2060</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="useridmonth" class="control-label" aria-required="true">ID Expiry Month</label>
+                            <select class="control-label" name="useridmonth" id="useridmonth">
+                                <option @if($useridmonth=='1') selected @endif value="1">1</option>
+                                <option @if($useridmonth=='2') selected @endif value="2">2</option>
+                                <option @if($useridmonth=='3') selected @endif value="3">3</option>
+                                <option @if($useridmonth=='4') selected @endif value="4">4</option>
+                                <option @if($useridmonth=='5') selected @endif value="5">5</option>
+                                <option @if($useridmonth=='6') selected @endif value="6">6</option>
+                                <option @if($useridmonth=='7') selected @endif value="7">7</option>
+                                <option @if($useridmonth=='8') selected @endif value="8">8</option>
+                                <option @if($useridmonth=='9') selected @endif value="9">9</option>
+                                <option @if($useridmonth=='10') selected @endif value="10">10</option>
+                                <option @if($useridmonth=='11') selected @endif value="11">11</option>
+                                <option @if($useridmonth=='12') selected @endif value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3 title_div dobdate_div last">
+                            <label for="useriddate" class="control-label" aria-required="true">ID Expiry Date</label>
+                            <select class="control-label" name="useriddate" id="useriddate">
+                                <option @if($useriddate=='1') selected @endif value="1">1</option>
+                                <option @if($useriddate=='2') selected @endif value="2">2</option>
+                                <option @if($useriddate=='3') selected @endif value="3">3</option>
+                                <option @if($useriddate=='4') selected @endif value="4">4</option>
+                                <option @if($useriddate=='5') selected @endif value="5">5</option>
+                                <option @if($useriddate=='6') selected @endif value="6">6</option>
+                                <option @if($useriddate=='7') selected @endif value="7">7</option>
+                                <option @if($useriddate=='8') selected @endif value="8">8</option>
+                                <option @if($useriddate=='9') selected @endif value="9">9</option>
+                                <option @if($useriddate=='10') selected @endif value="10">10</option>
+                                <option @if($useriddate=='11') selected @endif value="11">11</option>
+                                <option @if($useriddate=='12') selected @endif value="12">12</option>
+                                <option @if($useriddate=='13') selected @endif value="13">13</option>
+                                <option @if($useriddate=='14') selected @endif value="14">14</option>
+                                <option @if($useriddate=='15') selected @endif value="15">15</option>
+                                <option @if($useriddate=='16') selected @endif value="16">16</option>
+                                <option @if($useriddate=='17') selected @endif value="17">17</option>
+                                <option @if($useriddate=='18') selected @endif value="18">18</option>
+                                <option @if($useriddate=='19') selected @endif value="19">19</option>
+                                <option @if($useriddate=='20') selected @endif value="20">20</option>
+                                <option @if($useriddate=='21') selected @endif value="21">21</option>
+                                <option @if($useriddate=='22') selected @endif value="22">22</option>
+                                <option @if($useriddate=='23') selected @endif value="23">23</option>
+                                <option @if($useriddate=='24') selected @endif value="24">24</option>
+                                <option @if($useriddate=='25') selected @endif value="25">25</option>
+                                <option @if($useriddate=='26') selected @endif value="26">26</option>
+                                <option @if($useriddate=='27') selected @endif value="27">27</option>
+                                <option @if($useriddate=='28') selected @endif value="28">28</option>
+                                <option @if($useriddate=='29') selected @endif value="29">29</option>
+                                <option @if($useriddate=='30') selected @endif value="30">30</option>
+                                <option @if($useriddate=='31') selected @endif value="31">31</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3 title_div">
+                           <label for="address" class="control-label" aria-required="true">Address</label>
+                           <div style="display:flex;">
+                             <input style="margin-right: 1%;" class="form-control" placeholder="Address" name="address" type="text" value="{{$address}}" id="address" />
+                             <input style="margin-right: 1%;" class="form-control" placeholder="Suite" name="suite" type="text" value="{{$suite}}" id="suite" />
+                             <input style="margin-right: 1%;" class="form-control" placeholder="City" name="city" type="text" value="{{$city}}" id="city" />
+                             <input style="margin-right: 1%;" class="form-control" placeholder="State" name="state" type="text" value="{{$state}}" id="state" />
+                             <input style="margin-right: 1%;" class="form-control" placeholder="Postcode" name="postcode" type="text" value="{{$postcode}}" id="postcode"/>
+                             <input class="form-control" placeholder="Country" name="country" type="text" value="{{$country}}" id="country" /> 
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="email" class="control-label required">Email</label>
+                            <input class="form-control" placeholder="Email" name="email" type="email" id="email" value="{{$email}}" required />
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="password" class="control-label required" aria-required="true">Password</label>
+                            <input class="form-control" placeholder="******" name="password" type="password" id="password" value="{{$password}}" required />
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div">
+                            <label for="confirm_password" class="control-label required" aria-required="true">Password confirmation</label>
+                            <input class="form-control" placeholder="******" name="confirm_password" type="password" id="confirm_password" value="{{$passwordConfirm}}" required />
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div last">
+                            <label for="role" class="control-label required" aria-required="true">Role</label>
+                            <select name="role" class="form-control" required>
+                                <option value="">Select Role</option>
+                                @foreach($roles as $rol)
+                                    <option @if($role==$rol->id) selected @endif value="{{$rol->id}}">{{$rol->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3 title_div dobdate_div" style="width:max-content;">
+                            <label for="governmentID" class="control-label">Geovernment Issued ID(License, Password or Identity Card)</label>
+                            <input class="form-control" name="governmentID" type="file" id="governmentID" style="padding: 7px 10px;" />
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 right-sidebar">
+                
+                <div class="widget meta-boxes form-actions form-actions-default action-horizontal">
+                    <div class="widget-title">
+                        <h4>
+                            <span>Account</span>
+                        </h4>
+                    </div>
+                    <div class="widget-body">
+                        <div class="btn-set">
+                            <button type="submit" name="submit" class="btn btn-info"><i class="fa fa-save"></i> Create</button>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="widget meta-boxes">
+                    <div class="widget-title">
+                        <h4><label class="control-label">Profile</label></h4>
+                    </div>
+                    
+                    <div class="form-group mb-3 modalshg propertyImage">
+                        <div class="modal-body">
+                            <label for="images" class="control-label">Images</label>
+                            <div class="step">
+                                <div class="avatar-upload">
+                                    <div class="avatar-edit">
+                                        <input type='file' id="accountCreateImage" name="image" data-placeholder="{{ URL::to('dashboard_assets/assets/images/placeholder.png') }}" accept="image/png, image/gif, image/jpeg" />
+                                        <label for="accountCreateImage"></label>
+                                    </div>
+                                    <div class="avatar-preview">
+                                        <div id="accountCreateImagePreview" style="background-image: url({{ URL::to('dashboard_assets/assets/images/placeholder.png') }});">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+
+@endsection
